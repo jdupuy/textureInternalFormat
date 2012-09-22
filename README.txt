@@ -1,5 +1,5 @@
 AMD Driver bug on Catalyst 12.6
-Triangles should be identical.
+Textures should be identical.
 
 
 Building the sources
