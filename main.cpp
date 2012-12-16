@@ -54,6 +54,7 @@ const GLchar* vertexSrc[]={
 "void main(){\n",
 	"oTexCoord = vec2((gl_VertexID << 1) & 2, gl_VertexID & 2);",
 	"gl_Position.xy = oTexCoord*2.0-1.0;",
+	"gl_Position.zw = vec2(0,1);",
 "}\n"
 };
 
@@ -323,7 +324,7 @@ void on_init() {
 
 	// build program
 	GLuint vertex = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertex, 6, vertexSrc, NULL);
+	glShaderSource(vertex, 7, vertexSrc, NULL);
 	glCompileShader(vertex);
 	glAttachShader(program, vertex);
 	glDeleteShader(vertex);
